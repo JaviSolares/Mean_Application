@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/JaviSolares/Mean_Application/issues"
   },
-  "homepage": "https://github.com/JaviSolares/Mean_Application#readme"
+  "homepage": "https://github.com/JaviSolares/Mean_Application#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.9"
+  }
 }
