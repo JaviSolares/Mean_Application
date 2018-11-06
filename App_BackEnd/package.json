@@ -1,0 +1,19 @@
+{
+  "name": "app_backend",
+  "version": "1.0.0",
+  "description": "BackEnd de la aplicación",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaviSolares/Mean_Application.git"
+  },
+  "author": "Javi Solares",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JaviSolares/Mean_Application/issues"
+  },
+  "homepage": "https://github.com/JaviSolares/Mean_Application#readme"
+}
