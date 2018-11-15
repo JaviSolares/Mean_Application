@@ -8,6 +8,12 @@ import { Pokemon } from '../pokemon';
 })
 export class PokemonComponent implements OnInit {
 
+  pokemones: Pokemon[] = [];
+
+  getPokemones() {
+    
+  }
+
   constructor() { }
 
   ngOnInit() {
