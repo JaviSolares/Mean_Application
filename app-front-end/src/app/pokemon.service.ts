@@ -10,14 +10,14 @@ export class PokemonService {
   constructor(private http: Http) { }
 
   getPokemones() {
-    return this.http.get('http://localhost5000:/api/v1/pokemon')
+    return this.http.get('http://localhost:5000/api/v1/pokemon')
       .pipe(
         map(res => res.json())
       );
   }
 
   getPokemon(id) {
-    const url = `http://localhost5000:/api/v1/pokemon/${id}`;
+    const url = `http://localhost:5000/api/v1/pokemon/${id}`;
     return this.http.get(url)
       .pipe(
         map(res => res.json())
@@ -27,7 +27,7 @@ export class PokemonService {
   addPokemon(newPokemon) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost5000:/api/v1/pokemon', newPokemon, {headers: headers})
+    return this.http.post('http://localhost:5000/api/v1/pokemon', newPokemon, {headers: headers})
       .pipe(
         map(res => res.json())
       );
