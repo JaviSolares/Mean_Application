@@ -33,4 +33,9 @@ export class InfoPokemonComponent implements OnInit {
     this.localizacion.back();
   }
 
+  save(): void {
+    this.servicioPokemon.updatePokemon(this.pokemon)
+      .subscribe(() => this.goBack());
+  }
+
 }

@@ -33,4 +33,14 @@ export class PokemonService {
       );
   }
 
+  updatePokemon(modPokemon) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    const url = `http://localhost:5000/api/v1/pokemon/${modPokemon.id}`;
+    return this.http.put(url, modPokemon, {headers: headers})
+      .pipe(
+        map(res => res.json())
+      );
+  }
+
 }
