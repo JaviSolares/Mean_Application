@@ -43,4 +43,12 @@ export class PokemonService {
       );
   }
 
+  deletePokemon(id) {
+    const url = `http://localhost:5000/api/v1/pokemon/${id}`;
+    return this.http.delete(url)
+      .pipe(
+        map(res => res.json())
+      );
+  }
+
 }

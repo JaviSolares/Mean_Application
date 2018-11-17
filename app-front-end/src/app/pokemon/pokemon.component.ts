@@ -34,6 +34,11 @@ export class PokemonComponent implements OnInit {
       });
   }
 
+  delete(pokemon: Pokemon) {
+    this.pokemones = this.pokemones.filter(p => p !== pokemon);
+    this.pokemonService.deletePokemon(pokemon.id).subscribe();
+  }
+
   ngOnInit() {
     this.getMonsters();
   }
