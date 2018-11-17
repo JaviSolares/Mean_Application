@@ -4,6 +4,7 @@ import { PokemonComponent } from './pokemon/pokemon.component';
 import { InfoPokemonComponent } from './info-pokemon/info-pokemon.component';
 
 const rutas: Routes = [
+  { path: '', redirectTo: '/pokemones', pathMatch: 'full' },
   { path: 'detail/:id', component: InfoPokemonComponent },
   { path: 'pokemones', component: PokemonComponent }
 ];
