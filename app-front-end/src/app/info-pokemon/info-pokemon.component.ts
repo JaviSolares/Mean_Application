@@ -29,4 +29,8 @@ export class InfoPokemonComponent implements OnInit {
       .subscribe(pokemon => this.pokemon = pokemon);
   }
 
+  goBack(): void {
+    this.localizacion.back();
+  }
+
 }
