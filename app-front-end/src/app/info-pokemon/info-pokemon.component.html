@@ -1,3 +1,29 @@
-<p>
-  info-pokemon works!
-</p>
+<div *ngIf="pokemon">
+
+  <h2>Detalles de {{pokemon.nombre | uppercase}}</h2>
+  <div><span>id: </span>{{pokemon.id}}</div>
+  <div>
+      <label>nombre: 
+          <input [(ngModel)]="pokemon.nombre" placeholder="nombre">
+      </label>
+  </div>
+  <div>
+      <label>tipo primario: 
+          <input [(ngModel)]="pokemon.tipo_prim" placeholder="tipo primario">
+      </label>
+  </div>
+  <div>
+      <label>tipo secundario: 
+          <input [(ngModel)]="pokemon.tipo_secu" placeholder="tipo secundario">
+      </label>
+  </div>
+  <div>
+      <label>region: 
+          <input [(ngModel)]="pokemon.region" placeholder="region">
+      </label>
+  </div>
+
+  <button (click)="goBack()">regresar</button>
+  <button (click)="save()">guardar</button>
+
+</div>
