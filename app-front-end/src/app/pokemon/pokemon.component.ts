@@ -22,6 +22,18 @@ export class PokemonComponent implements OnInit {
       });
   }
 
+  add(id: number, nombre: string, tipo_prim: string, tipo_secu: string, region: string): void {
+    nombre = nombre.trim();
+    tipo_prim = tipo_prim.trim();
+    tipo_secu = tipo_secu.trim();
+    region = region.trim();
+    if (!nombre) { return; }
+    this.pokemonService.addPokemon({id, nombre, tipo_prim, tipo_secu, region } as Pokemon)
+      .subscribe(pokemon => {
+        this.pokemones.push(pokemon);
+      });
+  }
+
   ngOnInit() {
     this.getMonsters();
   }
