@@ -22,6 +22,10 @@ const PokemonSchema = new Schema({
     }
 });
 
+PokemonSchema.set('redisCache', true);
+
+PokemonSchema.set('expires', 30);
+
 const Monster = mongoose.model('monster', PokemonSchema);
 
 module.exports = Monster;
