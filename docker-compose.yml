@@ -1,0 +1,25 @@
+version: '3.0'
+
+services:
+  angular:
+    build: app-front-end
+    ports:
+      - "8000:4200"
+
+  express:
+    build: App_BackEnd
+    ports:
+      - "5000:5000"
+    links:
+      - database
+      - cache
+
+  database:
+    image: mongo
+    ports:
+      - "27017:27017"
+
+  cache:
+    image: redis
+    ports:
+      - "6379:6379"
