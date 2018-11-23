@@ -3,7 +3,9 @@ const router = express.Router();
 const Monster = require('../modelos/pokemon');
 const redis = require('redis');
 
-var client = redis.createClient(6379, 'localhost');
+var client = redis.createClient({
+    host: 'redis'
+});
 
 client.on('connect', function() {
     console.log('Connected to Redis..');
