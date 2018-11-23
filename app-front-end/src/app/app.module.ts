@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { InfoPokemonComponent } from './info-pokemon/info-pokemon.component';
 import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokemonComponent,
-    InfoPokemonComponent
+    InfoPokemonComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
