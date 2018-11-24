@@ -8,13 +8,15 @@ import { PokemonComponent } from './pokemon/pokemon.component';
 import { InfoPokemonComponent } from './info-pokemon/info-pokemon.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { RegistroPokemonComponent } from './registro-pokemon/registro-pokemon.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokemonComponent,
     InfoPokemonComponent,
-    DashboardComponent
+    DashboardComponent,
+    RegistroPokemonComponent
   ],
   imports: [
     BrowserModule,

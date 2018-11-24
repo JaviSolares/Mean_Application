@@ -1,0 +1,27 @@
+<h3>{{errorMsg}}</h3>
+
+<div>
+    <label>Id del pokémon:
+        <input #pokemonId />
+    </label> <br />
+    <label>Nombre del pokémon:
+      <input #pokemonNombre />
+    </label> <br />
+    <label>Tipo primario del pokémon:
+        <input #pokemonTipoPrim />
+    </label> <br />
+    <label>Tipo secundario del pokémon:
+        <input #pokemonTipoSecu />
+    </label> <br />
+    <label>Región del pokémon:
+        <input #pokemonRegion />
+    </label> <br />
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button (click)="add(pokemonId.value, pokemonNombre.value, 
+        pokemonTipoPrim.value, pokemonTipoSecu.value, 
+        pokemonRegion.value); pokemonId.value='';
+        pokemonNombre.value=''; pokemonTipoPrim.value='';
+        pokemonTipoSecu.value=''; pokemonRegion.value=''">
+      crear
+    </button>
+  </div>

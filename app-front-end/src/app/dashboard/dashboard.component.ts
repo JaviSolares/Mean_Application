@@ -24,4 +24,17 @@ export class DashboardComponent implements OnInit {
         error => this.errorMsg = error);
   }
 
+  confElim(pokemon: Pokemon) {
+    var r = confirm("¿Seguro que quiere eliminar a este pokemon?");
+    if (r == true)
+    {
+      this.delete(pokemon);
+    }
+  }
+
+  delete(pokemon: Pokemon) {
+    this.pokemones = this.pokemones.filter(p => p !== pokemon);
+    this.pokemonService.deletePokemon(pokemon.id).subscribe();
+  }
+
 }
