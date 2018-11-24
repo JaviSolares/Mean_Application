@@ -2,32 +2,6 @@
 
 <h3>{{errorMsg}}</h3>
 
-<div>
-    <label>Id del pokémon:
-        <input #pokemonId />
-    </label>
-    <label>Nombre del pokémon:
-      <input #pokemonNombre />
-    </label>
-    <label>Tipo primario del pokémon:
-        <input #pokemonTipoPrim />
-    </label>
-    <label>Tipo secundario del pokémon:
-        <input #pokemonTipoSecu />
-    </label>
-    <label>Región del pokémon:
-        <input #pokemonRegion />
-    </label>
-    <!-- (click) passes input value to add() and then clears the input -->
-    <button (click)="add(pokemonId.value, pokemonNombre.value, 
-        pokemonTipoPrim.value, pokemonTipoSecu.value, 
-        pokemonRegion.value); pokemonId.value='';
-        pokemonNombre.value=''; pokemonTipoPrim.value='';
-        pokemonTipoSecu.value=''; pokemonRegion.value=''">
-      crear
-    </button>
-  </div>
-
 <ul class="pokemones">
   <li *ngFor="let pokemon of pokemones">
       <a routerLink="/detail/{{pokemon.id}}">
