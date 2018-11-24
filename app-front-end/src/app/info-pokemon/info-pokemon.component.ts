@@ -33,6 +33,14 @@ export class InfoPokemonComponent implements OnInit {
     this.localizacion.back();
   }
 
+  confEdit() {
+    var r = confirm("¿Seguro que desea guardar las modificaciones hechas?");
+    if (r == true)
+    {
+      this.save();
+    }
+  }
+
   save(): void {
     this.servicioPokemon.updatePokemon(this.pokemon)
       .subscribe(() => this.goBack());
