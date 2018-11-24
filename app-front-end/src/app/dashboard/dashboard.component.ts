@@ -10,6 +10,7 @@ import { PokemonService } from '../pokemon.service';
 export class DashboardComponent implements OnInit {
 
   pokemones: Pokemon[] = [];
+  public errorMsg;
  
   constructor(private pokemonService: PokemonService) { }
  
@@ -19,7 +20,8 @@ export class DashboardComponent implements OnInit {
  
   getPokemones(): void {
     this.pokemonService.getPokemones()
-      .subscribe(monsters => this.pokemones = monsters);
+      .subscribe(monsters => this.pokemones = monsters,
+        error => this.errorMsg = error);
   }
 
 }

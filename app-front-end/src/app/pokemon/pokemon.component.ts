@@ -11,6 +11,7 @@ import { PokemonService } from '../pokemon.service';
 export class PokemonComponent implements OnInit {
 
   pokemones: Pokemon[] = [];
+  public errorMsg;
 
   constructor(private pokemonService: PokemonService) { }
 
@@ -19,7 +20,8 @@ export class PokemonComponent implements OnInit {
       .subscribe(monsters => {
         this.pokemones = monsters;
         console.log('Data from pokemon service: ' + this.pokemones[0].nombre);
-      });
+      },
+      error => this.errorMsg = error);
   }
 
   add(id: number, nombre: string, tipo_prim: string, tipo_secu: string, region: string): void {

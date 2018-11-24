@@ -12,6 +12,7 @@ import { PokemonService } from '../pokemon.service';
 export class InfoPokemonComponent implements OnInit {
 
   @Input() pokemon: Pokemon;
+  public errorMsg;
 
   constructor(
     private ruta: ActivatedRoute,
@@ -26,7 +27,8 @@ export class InfoPokemonComponent implements OnInit {
   getPokemon(): void {
     const id = +this.ruta.snapshot.paramMap.get('id');
     this.servicioPokemon.getPokemon(id)
-      .subscribe(pokemon => this.pokemon = pokemon);
+      .subscribe(pokemon => this.pokemon = pokemon,
+        error => this.errorMsg = error);
   }
 
   goBack(): void {
@@ -43,7 +45,8 @@ export class InfoPokemonComponent implements OnInit {
 
   save(): void {
     this.servicioPokemon.updatePokemon(this.pokemon)
-      .subscribe(() => this.goBack());
+      .subscribe(() => this.goBack(),
+      error => this.errorMsg = error);
   }
 
 }
