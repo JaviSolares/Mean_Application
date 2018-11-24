@@ -1,3 +1,8 @@
+process.env.PORT = process.env.PORT  || 5000;
+process.env.HOST_MONGO = process.env.HOST_MONGO || 'mongodb://mongo/pokedex';
+process.env.HOST_REDIS =  process.env.HOST_REDIS || 'redis';
+process.env.PORT_REDIS = process.env.PORT_REDIS || 6379;
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -8,7 +13,7 @@ const app = express();
 
 const router = require('./rutas/api');
 
-mongoose.connect('mongodb://localhost/pokedex');
+mongoose.connect(process.env.HOST_MONGO);
 
 mongoose.connection.on('connected', () => {
     console.log('MongoDB connected on port 27017');
@@ -24,6 +29,6 @@ app.use(bodyParser.json());
 
 app.use('/api/v1/pokemon', router);
 
-app.listen(5000, function() {
+app.listen(process.env.PORT, function() {
     console.log('Node server is running..');
 });

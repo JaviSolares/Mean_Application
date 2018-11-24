@@ -1,9 +1,7 @@
-FROM node:8
-RUN mkdir -p /usr/src/app
+FROM node:latest
 WORKDIR /usr/src/app
-COPY package.json /usr/src/app
-RUN npm cache clean
+COPY package*.json ./
 RUN npm install
-COPY . /usr/src/app
+COPY . .
 EXPOSE 5000
-CMD ["npm", "start"]
+CMD ["node", "server.js"]

@@ -3,9 +3,7 @@ const router = express.Router();
 const Monster = require('../modelos/pokemon');
 const redis = require('redis');
 
-var client = redis.createClient({
-    host: 'redis'
-});
+var client = redis.createClient(process.env.PORT_REDIS, process.env.HOST_REDIS);
 
 client.on('connect', function() {
     console.log('Connected to Redis..');
@@ -19,6 +17,10 @@ router.get('/', function(req, res, next) {
     Monster.find({}).then(function(pokemones) {
         res.send(pokemones);
     });
+});
+
+router.get('/hello', function(req, res, next) {
+    res.send('Hello World!');
 });
 
 router.get('/:id', function(req, res, next) {
