@@ -19,18 +19,18 @@ router.get('/', function(req, res, next) {
     });
 });
 
-router.get('/hello', function(req, res, next) {
+/*router.get('/hello', function(req, res, next) {
     res.send('Hello World!');
-});
+});*/
 
 router.get('/:id', function(req, res, next) {
     client.get(req.params.id, function(err, reply) {
         if (err) {
             next(null);
         } 
-        /*else if (reply) {
+        else if (reply) {
             next(JSON.parse(reply));
-        }*/
+        }
         else {
             Monster.findOne({ id: req.params.id }, 
                 function(err, doc) {
@@ -42,14 +42,7 @@ router.get('/:id', function(req, res, next) {
                     }
                 })
                 .then(function(pokemon) {
-                    if (!pokemon)
-                    {
-                        res.json(404, 'Pokemon not found.');
-                    }
-                    else
-                    {
-                        res.send(pokemon);
-                    }
+                    res.send(pokemon);
                 });
         }
     });
