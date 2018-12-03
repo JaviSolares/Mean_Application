@@ -44,7 +44,7 @@ router.get('/:id', function(req, res, next) {
                 .then(function(pokemon) {
                     if (!pokemon)
                     {
-                        res.send(404, 'Pokemon not found.');
+                        res.json(404, 'Pokemon not found.');
                     }
                     else
                     {
