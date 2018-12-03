@@ -3,6 +3,7 @@ version: '3.0'
 services:
   front-end-app:
     build: ./app-front-end
+    container_name: "front-end-app"
     ports:
       - "80:80"
     depends_on:
@@ -12,6 +13,7 @@ services:
 
   back-end-app:
     build: ./App_BackEnd
+    container_name: "back-end-app"
     environment:
       - PORT = 5000
       - HOST_MONGO = 'mongodb://mongo/pokedex'
@@ -40,6 +42,7 @@ services:
 
   redis:
     image: redis
+    container_name: "redis"
     ports:
       - "6379:6379"
     volumes:
