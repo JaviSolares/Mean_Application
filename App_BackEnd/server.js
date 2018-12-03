@@ -1,5 +1,5 @@
 process.env.PORT = process.env.PORT  || 5000;
-process.env.HOST_MONGO = process.env.HOST_MONGO || 'mongodb://mongo/pokedex';
+process.env.HOST_MONGO = process.env.HOST_MONGO || 'mongodb://javisolares:Chimchar004@ds125198.mlab.com:25198/pokedex';
 process.env.HOST_REDIS =  process.env.HOST_REDIS || 'redis';
 process.env.PORT_REDIS = process.env.PORT_REDIS || 6379;
 
