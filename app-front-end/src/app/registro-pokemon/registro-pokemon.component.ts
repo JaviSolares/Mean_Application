@@ -21,15 +21,28 @@ export class RegistroPokemonComponent implements OnInit {
   ) { }
 
   add(id: number, nombre: string, tipo_prim: string, tipo_secu: string, region: string): void {
-    nombre = nombre.trim();
-    tipo_prim = tipo_prim.trim();
-    tipo_secu = tipo_secu.trim();
-    region = region.trim();
-    if (!nombre) { return; }
-    this.pokemonService.addPokemon({id, nombre, tipo_prim, tipo_secu, region } as Pokemon)
-      .subscribe(pokemon => {
-        this.pokemones.push(pokemon);
-      });
+    if (this.pokemones.find(x => x.id == id))
+    {
+      alert("Ya existe un pokemon con el id especificado.");
+      return;
+    }
+    else
+    {
+      nombre = nombre.trim();
+      tipo_prim = tipo_prim.trim();
+      tipo_secu = tipo_secu.trim();
+      region = region.trim();
+      if (!nombre) { return; }
+      this.pokemonService.addPokemon({id, nombre, tipo_prim, tipo_secu, region } as Pokemon)
+        .subscribe(pokemon => {
+          this.pokemones.push(pokemon);
+        });
+      this.avisoCreacion();
+    } 
+  }
+
+  avisoCreacion(): void {
+    alert("El pokemon ha sido creado exitosamente. Vaya a la Vista de Tabla para consultar o modificar sus datos.");
   }
 
   goBack(): void {
