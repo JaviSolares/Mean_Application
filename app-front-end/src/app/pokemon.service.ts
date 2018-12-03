@@ -26,7 +26,7 @@ export class PokemonService {
 
   getPokemon(id) {
     const url = `${this.pokemonUrl}/${id}`;
-    return this.http.get(url)
+    return this.http.get('http://35.232.116.217/api/v1/pokemon/:id')
       .pipe(
         map(res => res.json()),
         catchError(this.errorHandler)
