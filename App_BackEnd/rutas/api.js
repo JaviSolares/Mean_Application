@@ -28,9 +28,9 @@ router.get('/:id', function(req, res, next) {
         if (err) {
             next(null);
         } 
-        else if (reply) {
+        /*else if (reply) {
             next(JSON.parse(reply));
-        }
+        }*/
         else {
             Monster.findOne({ id: req.params.id }, 
                 function(err, doc) {
