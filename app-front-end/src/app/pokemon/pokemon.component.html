@@ -5,7 +5,7 @@
 <ul class="pokemones">
   <li *ngFor="let pokemon of pokemones">
       <a routerLink="/detail/{{pokemon.id}}">
-          <span class="badge">{{pokemon.id}}</span> {{pokemon.nombre}} {{pokemon.tipo_prim}} {{pokemon.tipo_secu}} {{pokemon.region}}
+          <span class="badge">{{pokemon.id}}</span> {{pokemon.nombre}} 
       </a>
       <button class="delete" title="delete pokemon"
           (click)="confElim(pokemon)">x</button>
